@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFF Predictor</title>
+
+
+    <style>
+        .form-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px; /* Adjust gap as needed */
+        }
+
+        /* Style individual form elements if needed */
+        .form-container label, .form-container input[type="text"], .form-container input[type="number"] {
+            margin-bottom: 5px;
+        }
+
+        /*Style the input button*/
+        input[type="submit"] {
+        width: 50%; /* Adjust the width as needed */
+        padding: 5px; /* Adjust padding as needed */
+    }
+    </style>
+
+</head>
+<body>
+    <h1>AFF Machine Learning Predictor</h1>
+    <form id="form" class ="form-container">
+
+        <div>
+            <label for="fieldRace">Race:</label><br>
+            <input type="text" id="fieldRace" name="fieldRace"><br>
+
+            <label for="fieldAgeAtFirst">Age at first hip fracture:</label><br>
+            <input type="number" id="fieldAgeAtFirst" name="fieldAgeAtFirst"><br>
+
+            <label for="fieldBisphosphonates">Bisphosphonates:</label><br>
+            <input type="text" id="fieldBisphosphonates" name="fieldBisphosphonates"><br>
+
+            <label for="fieldDuration">Duration of Bisphosphonates:</label><br>
+            <input type="number" id="fieldDuration" name="fieldDuration"><br>
+
+            <label for="fieldOtherMedication">Other Medication:</label><br>
+            <input type="text" id="fieldOtherMedication" name="fieldOtherMedication"><br>
+
+            <label for="fieldWeight">Weight (kg):</label><br>
+            <input type="number" id="fieldWeight" name="fieldWeight" step="0.01"><br>
+
+            <label for="fieldHeight">Height (cm):</label><br>
+            <input type="number" id="fieldHeight" name="fieldHeight" step="0.01"><br>
+
+            <label for="fieldBMI">BMI (Kg/m^2):</label><br>
+            <input type="number" id="fieldBMI" name="fieldBMI" step="0.01"><br>
+            
+            <label for="fieldPreviousNTF">Previous Non Traumatic Fracture (Y/N):</label><br>
+            <input type="text" id="fieldPreviousNTF" name="fieldPreviousNTF"><br>
+
+            <label for="fieldParent">Parent fractured hip? (Y/N):</label><br>
+            <input type="text" id="fieldParent" name="fieldParent"><br>
+
+            <label for="fieldSmoker">Current Smoker? (Y/N):</label><br>
+            <input type="text" id="fieldSmoker" name="fieldSmoker"><br>
+
+            <label for="fieldSteroid">Steroid Use (>3 months): (Y/N):</label><br>
+            <input type="text" id="fieldSteroid" name="fieldSteroid"><br>
+
+            <label for="fieldRA">Rhuematoid Arthritis: (Y/N):</label><br>
+            <input type="text" id="fieldRA" name="fieldRA"><br>
+
+        </div>
+        <div>
+
+            <label for="fieldSO">History of Secondary Osteoporosis: (Y/N):</label><br>
+            <input type="text" id="fieldSO" name="fieldSO"><br>
+
+            <label for="fieldAlcoholism">Alcoholism (>3 drinks per day): (Y/N):</label><br>
+            <input type="text" id="fieldAlcoholism" name="fieldAlcoholism"><br>
+
+            <label for="fieldMCT">Medial Cortical Thickness:</label><br>
+            <input type="number" id="fieldMCT" name="fieldMCT" step="0.01"><br>
+
+            <label for="fieldLCT">Lateral Cortical Thickness:</label><br>
+            <input type="number" id="fieldLCT" name="fieldLCT" step="0.01"><br>
+
+            <label for="fieldOffset">Offset:</label><br>
+            <input type="number" id="fieldOffset" name="fieldOffset" step="0.01"><br>
+
+            <label for="fieldFMA">Femoral neck angle:</label><br>
+            <input type="number" id="fieldFMA" name="fieldFMA" step="0.01"><br>
+
+            <label for="fieldFMD">Femural Neck Diameter:</label><br>
+            <input type="number" id="fieldFMD" name="fieldFMD" step="0.01"><br>
+
+            <label for="fieldVO">Vertical Offset:</label><br>
+            <input type="number" id="fieldVO" name="fieldVO" step="0.01"><br>
+
+            <label for="fieldFMT">Fermoral neck thickness:</label><br>
+            <input type="number" id="fieldFMT" name="fieldFMT" step="0.01"><br>
+
+            <label for="fieldDXABMD">DXA Femoral Neck #1 BMD (g/cm^2):</label><br>
+            <input type="number" id="fieldDXABMD" name="fieldDXABMD" step="0.01"><br>
+
+            <label for="fieldDXAlumbar">DXA L1-L4 BMD (g/cm^2):</label><br>
+            <input type="number" id="fieldDXAlumbar" name="fieldDXAlumbar" step="0.01"><br>
+
+            <label for="fieldFraxMajor">FRAX Score - online calculator major fracture (%):</label><br>
+            <input type="number" id="fieldFraxMajor" name="fieldFraxMajor" step="0.01"><br>
+
+            <label for="fieldFraxHip">FRAX Score - online calculator hip fracture:</label><br>
+            <input type="number" id="fieldFraxHip" name="fieldFraxHip" step="0.01"><br>
+
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            // Get form data
+            var formData = new FormData(this);
+
+
+            //validate numbers being inputted correctly.
+            var ageInput = formData.get("fieldAgeAtFirst");
+            if (ageInput === "" || isNaN(ageInput)) {
+                alert("Please input a valid age as a number.");
+                return; // Exit function if input is invalid
+            }
+
+            var durationInput = formData.get("fieldDuration");
+            if (durationInput === "" || isNaN(durationInput)) {
+                alert("Please input a valid duration as a number.");
+                return; // Exit function if input is invalid
+            }
+
+            // Send form data to FastAPI endpoint
+            fetch('http://127.0.0.1:8000/submit/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(Object.fromEntries(formData.entries()))
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert('Prediction Results:\n' + data.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            });
+        });
+    </script>
+</body>
+</html>
