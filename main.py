@@ -60,7 +60,7 @@ def predict (race,age,bisphosphonate,duration,other,weight,height,bmi,ntf,parent
 
 
 
-@app.post("/submit/")
+@app.post("/submit")
 async def submit_form(data: FormData):
     try:
         form_data = data.dict()
