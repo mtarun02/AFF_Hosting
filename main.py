@@ -62,6 +62,7 @@ def predict (race,age,bisphosphonate,duration,other,weight,height,bmi,ntf,parent
 
 @app.post("/submit")
 async def submit_form(data: FormData):
+    print("SHIVAM AMIN2")
     try:
         form_data = data.dict()
 
