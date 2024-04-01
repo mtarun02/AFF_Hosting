@@ -10,7 +10,7 @@ import pandas as pd
 from typing import Union
 
 app = FastAPI()
-
+print("hellohellohellohello")
 # CORS configuration
 #app.add_middleware(
 #    CORSMiddleware,
