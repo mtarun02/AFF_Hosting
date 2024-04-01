@@ -1,8 +1,1 @@
-fastapi==0.95.1 
-uvicorn==0.22.0 
-pydantic
-pandas<2.0.0
-pycaret
-catboost
-xgboost
-scikit-learn==1.2.2
+
