@@ -5,3 +5,4 @@ pandas<2.0.0
 pycaret
 catboost
 xgboost
+scikit-learn==1.2.2
