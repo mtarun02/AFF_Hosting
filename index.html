@@ -13,106 +13,206 @@
             gap: 5px; /* Adjust gap as needed */
         }
 
-        /* Style individual form elements if needed */
-        .form-container label, .form-container input[type="text"], .form-container input[type="number"] {
-            margin-bottom: 5px;
-        }
+    
+        
+
 
         /*Style the input button*/
         input[type="submit"] {
         width: 50%; /* Adjust the width as needed */
         padding: 5px; /* Adjust padding as needed */
-    }
+        }
+
+        
+        
     </style>
 
+    
 </head>
 <body>
     <h1>AFF Machine Learning Predictor</h1>
     <form id="form" class ="form-container">
 
+
+
         <div>
-            <label for="fieldRace">Race:</label><br>
-            <input type="text" id="fieldRace" name="fieldRace"><br>
+            <label for="fieldRace">Race:</label>
+            <select id="fieldRace" name ="fieldRace">
+                <option></option>
+                <option>White</option>
+                <option>Asian</option>
+                <option>Black</option>
+                <option>Hispanic/Latino</option>
 
-            <label for="fieldAgeAtFirst">Age at first hip fracture:</label><br>
-            <input type="number" id="fieldAgeAtFirst" name="fieldAgeAtFirst"><br>
-
-            <label for="fieldBisphosphonates">Bisphosphonates:</label><br>
-            <input type="text" id="fieldBisphosphonates" name="fieldBisphosphonates"><br>
-
-            <label for="fieldDuration">Duration of Bisphosphonates:</label><br>
-            <input type="number" id="fieldDuration" name="fieldDuration"><br>
-
-            <label for="fieldOtherMedication">Other Medication:</label><br>
-            <input type="text" id="fieldOtherMedication" name="fieldOtherMedication"><br>
-
-            <label for="fieldWeight">Weight (kg):</label><br>
-            <input type="number" id="fieldWeight" name="fieldWeight" step="0.01"><br>
-
-            <label for="fieldHeight">Height (cm):</label><br>
-            <input type="number" id="fieldHeight" name="fieldHeight" step="0.01"><br>
-
-            <label for="fieldBMI">BMI (Kg/m^2):</label><br>
-            <input type="number" id="fieldBMI" name="fieldBMI" step="0.01"><br>
-            
-            <label for="fieldPreviousNTF">Previous Non Traumatic Fracture (Y/N):</label><br>
-            <input type="text" id="fieldPreviousNTF" name="fieldPreviousNTF"><br>
-
-            <label for="fieldParent">Parent fractured hip? (Y/N):</label><br>
-            <input type="text" id="fieldParent" name="fieldParent"><br>
-
-            <label for="fieldSmoker">Current Smoker? (Y/N):</label><br>
-            <input type="text" id="fieldSmoker" name="fieldSmoker"><br>
-
-            <label for="fieldSteroid">Steroid Use (>3 months): (Y/N):</label><br>
-            <input type="text" id="fieldSteroid" name="fieldSteroid"><br>
-
-            <label for="fieldRA">Rhuematoid Arthritis: (Y/N):</label><br>
-            <input type="text" id="fieldRA" name="fieldRA"><br>
+            </select>
 
         </div>
+
         <div>
-
-            <label for="fieldSO">History of Secondary Osteoporosis: (Y/N):</label><br>
-            <input type="text" id="fieldSO" name="fieldSO"><br>
-
-            <label for="fieldAlcoholism">Alcoholism (>3 drinks per day): (Y/N):</label><br>
-            <input type="text" id="fieldAlcoholism" name="fieldAlcoholism"><br>
-
-            <label for="fieldMCT">Medial Cortical Thickness:</label><br>
-            <input type="number" id="fieldMCT" name="fieldMCT" step="0.01"><br>
-
-            <label for="fieldLCT">Lateral Cortical Thickness:</label><br>
-            <input type="number" id="fieldLCT" name="fieldLCT" step="0.01"><br>
-
-            <label for="fieldOffset">Offset:</label><br>
-            <input type="number" id="fieldOffset" name="fieldOffset" step="0.01"><br>
-
-            <label for="fieldFMA">Femoral neck angle:</label><br>
-            <input type="number" id="fieldFMA" name="fieldFMA" step="0.01"><br>
-
-            <label for="fieldFMD">Femural Neck Diameter:</label><br>
-            <input type="number" id="fieldFMD" name="fieldFMD" step="0.01"><br>
-
-            <label for="fieldVO">Vertical Offset:</label><br>
-            <input type="number" id="fieldVO" name="fieldVO" step="0.01"><br>
-
-            <label for="fieldFMT">Fermoral neck thickness:</label><br>
-            <input type="number" id="fieldFMT" name="fieldFMT" step="0.01"><br>
-
-            <label for="fieldDXABMD">DXA Femoral Neck #1 BMD (g/cm^2):</label><br>
-            <input type="number" id="fieldDXABMD" name="fieldDXABMD" step="0.01"><br>
-
-            <label for="fieldDXAlumbar">DXA L1-L4 BMD (g/cm^2):</label><br>
-            <input type="number" id="fieldDXAlumbar" name="fieldDXAlumbar" step="0.01"><br>
-
-            <label for="fieldFraxMajor">FRAX Score - online calculator major fracture (%):</label><br>
-            <input type="number" id="fieldFraxMajor" name="fieldFraxMajor" step="0.01"><br>
-
-            <label for="fieldFraxHip">FRAX Score - online calculator hip fracture:</label><br>
-            <input type="number" id="fieldFraxHip" name="fieldFraxHip" step="0.01"><br>
-
+            <label for="fieldAgeAtFirst">Age at first hip fracture (Years): </label>
+            <input name="fieldAgeAtFirst" id="fieldAgeAtFirst" />
         </div>
+
+        <div>
+            <label for="fieldBisphosphonates">Bisphosphonates: </label>
+            <input name="fieldBisphosphonates" id="fieldBisphosphonates" />
+        </div>
+
+        <div>
+            <label for="fieldDuration">Duration (Years): </label>
+            <input name="fieldDuration" id="fieldDuration" />
+        </div>
+
+        <div>
+            <label for="fieldOtherMedication">Other Medications: </label>
+            <input name="fieldOtherMedication" id="fieldOtherMedication" />
+        </div>
+
+        <div>
+            <label for="fieldWeight">Weight (kg): </label>
+            <input name="fieldWeight" id="fieldWeight" />
+        </div>
+
+        <div>
+            <label for="fieldHeight">Height (cm): </label>
+            <input name="fieldHeight" id="fieldHeight" />
+        </div>
+
+        <div>
+            <label for="fieldBMI">BMI (Kg/m^2): </label>
+            <input name="fieldBMI" id="fieldBMI" />
+        </div>
+
+
+        <div>
+            <label for="fieldPreviousNTF">Previous Non Traumatic Fracture (Y/N): </label>
+            <select id="fieldPreviousNTF" name="fieldPreviousNTF">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="fieldParent">Parent fractured hip? (Y/N): </label>
+            <select id="fieldParent" name="fieldParent">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="fieldSmoker">Current Smoker? (Y/N): </label>
+            <select id="fieldSmoker" name="fieldSmoker">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="fieldSteroid">Steroid Use (>3 months): (Y/N): </label>
+            <select id="fieldSteroid" name="fieldSteroid">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="fieldRA">Rhuematoid Arthritis: (Y/N): </label>
+            <select id="fieldRA" name="fieldRA">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="fieldSO">History of Secondary Osteoporosis: (Y/N): </label>
+            <select id="fieldSO" name="fieldSO">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="fieldAlcoholism">Alcoholism (>3 drinks per day) (Y/N): </label>
+            <select id="fieldAlcoholism" name="fieldAlcoholism">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select>
+        </div>
+
+
+        <div>
+            <label for="fieldMCT">Medial Cortical Thickness (mm): </label>
+            <input name="fieldMCT" id="fieldMCT" />
+        </div>
+
+        <div>
+            <label for="fieldLCT">Lateral Cortical Thickness (mm): </label>
+            <input name="fieldLCT" id="fieldLCT" />
+        </div>
+
+        <div>
+            <label for="fieldOffset">Offset (mm): </label>
+            <input name="fieldOffset" id="fieldOffset" />
+        </div>
+
+        <div>
+            <label for="fieldFMA">Femoral neck angle (Degrees): </label>
+            <input name="fieldFMA" id="fieldFMA" />
+        </div>
+
+        <div>
+            <label for="fieldFMD">Femoral neck diameter (mm): </label>
+            <input name="fieldFMD" id="fieldFMD" />
+        </div>
+
+        <div>
+            <label for="fieldVO">Vertical Offset (mm): </label>
+            <input name="fieldVO" id="fieldVO" />
+        </div>
+
+        <div>
+            <label for="fieldFMT">Fermoral neck thickness (mm): </label>
+            <input name="fieldFMT" id="fieldFMT" />
+        </div>
+
+        <div>
+            <label for="fieldDXABMD">DXA Femoral Neck #1 BMD (g/cm^2): </label>
+            <input name="fieldDXABMD" id="fieldDXABMD" />
+        </div>
+
+        <div>
+            <label for="fieldDXAlumbar">DXA Femoral Neck #1 BMD (g/cm^2): </label>
+            <input name="fieldDXAlumbar" id="fieldDXAlumbar" />
+        </div>
+
+        <div>
+            <label for="fieldDXABMD">DXA L1-L4 BMD (g/cm^2): </label>
+            <input name="fieldDXABMD" id="fieldDXABMD" />
+        </div>
+
+        <div>
+            <label for="fieldFraxMajor">FRAX Score - online calculator major fracture (%): </label>
+            <input name="fieldFraxMajor" id="fieldFraxMajor" />
+        </div>
+
+
+        <div>
+            <label for="fieldFraxHip">FRAX Score - online calculator hip fracture (%): </label>
+            <input name="fieldFraxHip" id="fieldFraxHip" />
+        </div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+
 
         <input type="submit" value="Submit">
     </form>
@@ -126,20 +226,22 @@
 
 
             //validate numbers being inputted correctly.
-            var ageInput = formData.get("fieldAgeAtFirst");
-            if (ageInput === "" || isNaN(ageInput)) {
-                alert("Please input a valid age as a number.");
-                return; // Exit function if input is invalid
-            }
+            //var ageInput = formData.get("fieldAgeAtFirst");
+            //if (ageInput === "" || isNaN(ageInput)) {
+            //    alert("Please input a valid age as a number.");
+            //    return; // Exit function if input is invalid
+            //}
 
-            var durationInput = formData.get("fieldDuration");
-            if (durationInput === "" || isNaN(durationInput)) {
-                alert("Please input a valid duration as a number.");
-                return; // Exit function if input is invalid
-            }
+            //var durationInput = formData.get("fieldDuration");
+            //if (durationInput === "" || isNaN(durationInput)) {
+            //    alert("Please input a valid duration as a number.");
+            //    return; // Exit function if input is invalid
+            //}
 
             // Send form data to FastAPI endpoint
             fetch('https://affpythonrepo.onrender.com', {
+            //fetch('http://127.0.0.1:8000/submit/', {
+
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
