@@ -1,0 +1,133 @@
+body {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0;
+    font-family: sans-serif;
+}
+
+.header-bar {
+    background-color: navy;
+    color: white;
+    text-align: center;
+    padding: 2% 0;
+    font-size: 2em;
+    height: 7%;
+    box-sizing: border-box;
+}
+
+.sub-header {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.5em;
+}
+
+/* Remove two-column layout and make forms single-column */
+.form-grid {
+    display: block; /* No grid layout, single column */
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Place form2 next to form1, each taking 50% width */
+#form1, #form2 {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+}
+
+/* Adjust gap between forms */
+#form1 {
+    margin-right: 2%;
+}
+
+/* Fieldset styling */
+fieldset {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+#form1 fieldset {
+    height: 544px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+/* Reduce padding between fieldsets in form2 */
+#form2 fieldset {
+    margin-bottom: 10px; /* Reduced space between fieldsets in form 2 */
+}
+
+/* Set all labels to be aligned properly, for both forms */
+#form1 label {
+    display: inline-block;
+    width: 300px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+/*
+#form2 label {
+    display: inline-block;
+    width: 305px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+*/
+
+#form2 fieldset:nth-child(1) label {
+    display: inline-block;
+    width: 305px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+#form2 fieldset:nth-child(2) label {
+    display: inline-block;
+    width: 275px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+#form2 fieldset:nth-child(3) label {
+    display: inline-block;
+    width: 370px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+/* Output container styling */
+.output-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    clear: both; /* Ensure it stays below the forms */
+}
+
+/* Center submit button */
+.submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Button styling */
+#submitBtn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submitBtn:hover {
+    background-color: darkblue;
+}

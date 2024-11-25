@@ -1,257 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFF Predictor</title>
-
-
-    <style>
-        .form-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 5px; /* Adjust gap as needed */
-        }
-
-    
-        
-
-
-        /*Style the input button*/
-        input[type="submit"] {
-        width: 50%; /* Adjust the width as needed */
-        padding: 5px; /* Adjust padding as needed */
-        }
-
-        
-        
-    </style>
-
-    
+    <title>Machine Learning Atypical Femur Fracture (AFF) Risk Predictor</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>AFF Machine Learning Predictor</h1>
-    <form id="form" class ="form-container">
+    <div class="header-bar">
+        Machine Learning Atypical Femur Fracture (AFF) Risk Predictor
+    </div>
+    <div class="sub-header" style="font-size: 0.9em;">
+        For investigative use only. Not for clinical use
+    </div>
 
+    <!-- First Form -->
+    <form id="form1" class="form-grid">
 
+        <!-- First group of inputs: Patient History -->
+        <fieldset>
+            <legend>Patient History</legend>
 
-        <div>
-            <label for="fieldRace">Race:</label>
-            <select id="fieldRace" name ="fieldRace">
+            <label for="fieldPamidronate">Pamidronate Use (Y/N):</label>
+            <select id="fieldPamidronate" name="fieldPamidronate">
                 <option></option>
-                <option>White</option>
-                <option>Asian</option>
-                <option>Black</option>
-                <option>Hispanic/Latino</option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
 
-            </select>
+            <label for="fieldRisedronate">Risedronate Use (Y/N):</label>
+            <select id="fieldRisedronate" name="fieldRisedronate">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
 
-        </div>
+            <label for="fieldIbandronate">Ibandronate Use (Y/N):</label>
+            <select id="fieldIbandronate" name="fieldIbandronate">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
 
-        <div>
-            <label for="fieldAgeAtFirst">Age at first hip fracture (Years): </label>
-            <input name="fieldAgeAtFirst" id="fieldAgeAtFirst" />
-        </div>
+            <label for="fieldZoledronate">Zoledronate Use (Y/N):</label>
+            <select id="fieldZoledronate" name="fieldZoledronate">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
 
-        <div>
-            <label for="fieldBisphosphonates">Bisphosphonates: </label>
-            <input name="fieldBisphosphonates" id="fieldBisphosphonates" />
-        </div>
+            <label for="fieldAlendronate">Alendronate Use (Y/N):</label>
+            <select id="fieldAlendronate" name="fieldAlendronate">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
 
-        <div>
-            <label for="fieldDuration">Duration (Years): </label>
-            <input name="fieldDuration" id="fieldDuration" />
-        </div>
+            <label for="fieldDenosumab">Denosumab Use (Y/N):</label>
+            <select id="fieldDenosumab" name="fieldDenosumab">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
 
-        <div>
-            <label for="fieldOtherMedication">Other Medications: </label>
-            <input name="fieldOtherMedication" id="fieldOtherMedication" />
-        </div>
+            <label for="fieldDuration">Duration of Bisphosphonate Use (Years):</label>
+            <input type="text" id="fieldDuration" name="fieldDuration"><br><br>
 
-        <div>
-            <label for="fieldWeight">Weight (kg): </label>
-            <input name="fieldWeight" id="fieldWeight" />
-        </div>
-
-        <div>
-            <label for="fieldHeight">Height (cm): </label>
-            <input name="fieldHeight" id="fieldHeight" />
-        </div>
-
-        <div>
-            <label for="fieldBMI">BMI (Kg/m^2): </label>
-            <input name="fieldBMI" id="fieldBMI" />
-        </div>
-
-
-        <div>
-            <label for="fieldPreviousNTF">Previous Non Traumatic Fracture (Y/N): </label>
+            <label for="fieldPreviousNTF">Previous Non Traumatic Fracture (Y/N):</label>
             <select id="fieldPreviousNTF" name="fieldPreviousNTF">
                 <option></option>
                 <option>Y</option>
                 <option>N</option>
-            </select>
-        </div>
+            </select><br><br>
 
-        <div>
-            <label for="fieldParent">Parent fractured hip? (Y/N): </label>
+            <label for="fieldParent">Parent Fractured Hip? (Y/N):</label>
             <select id="fieldParent" name="fieldParent">
                 <option></option>
                 <option>Y</option>
                 <option>N</option>
-            </select>
-        </div>
+            </select><br><br>
 
-        <div>
-            <label for="fieldSmoker">Current Smoker? (Y/N): </label>
+            <label for="fieldSmoker">Current Smoker? (Y/N):</label>
             <select id="fieldSmoker" name="fieldSmoker">
                 <option></option>
                 <option>Y</option>
                 <option>N</option>
-            </select>
-        </div>
+            </select><br><br>
 
-        <div>
-            <label for="fieldSteroid">Steroid Use (>3 months): (Y/N): </label>
+            <label for="fieldSteroid">Steroid Use (>3 months) (Y/N):</label>
             <select id="fieldSteroid" name="fieldSteroid">
                 <option></option>
                 <option>Y</option>
                 <option>N</option>
-            </select>
-        </div>
+            </select><br><br>
 
-        <div>
-            <label for="fieldRA">Rhuematoid Arthritis: (Y/N): </label>
+            <label for="fieldRA">Rheumatoid Arthritis (Y/N):</label>
             <select id="fieldRA" name="fieldRA">
                 <option></option>
                 <option>Y</option>
                 <option>N</option>
-            </select>
-        </div>
+            </select><br><br>
 
-        <div>
-            <label for="fieldSO">History of Secondary Osteoporosis: (Y/N): </label>
+            <label for="fieldSO">History of Secondary Osteoporosis (Y/N):</label>
             <select id="fieldSO" name="fieldSO">
                 <option></option>
                 <option>Y</option>
                 <option>N</option>
-            </select>
-        </div>
+            </select><br><br>
 
-        <div>
-            <label for="fieldAlcoholism">Alcoholism (>3 drinks per day) (Y/N): </label>
+            <label for="fieldAlcoholism">Alcoholism (>3 drinks per day) (Y/N):</label>
             <select id="fieldAlcoholism" name="fieldAlcoholism">
                 <option></option>
                 <option>Y</option>
                 <option>N</option>
-            </select>
-        </div>
-
-
-        <div>
-            <label for="fieldMCT">Medial Cortical Thickness (mm): </label>
-            <input name="fieldMCT" id="fieldMCT" />
-        </div>
-
-        <div>
-            <label for="fieldLCT">Lateral Cortical Thickness (mm): </label>
-            <input name="fieldLCT" id="fieldLCT" />
-        </div>
-
-        <div>
-            <label for="fieldOffset">Offset (mm): </label>
-            <input name="fieldOffset" id="fieldOffset" />
-        </div>
-
-        <div>
-            <label for="fieldFMA">Femoral neck angle (Degrees): </label>
-            <input name="fieldFMA" id="fieldFMA" />
-        </div>
-
-        <div>
-            <label for="fieldFMD">Femoral neck diameter (mm): </label>
-            <input name="fieldFMD" id="fieldFMD" />
-        </div>
-
-        <div>
-            <label for="fieldVO">Vertical Offset (mm): </label>
-            <input name="fieldVO" id="fieldVO" />
-        </div>
-
-        <div>
-            <label for="fieldFMT">Fermoral neck thickness (mm): </label>
-            <input name="fieldFMT" id="fieldFMT" />
-        </div>
-
-        <div>
-            <label for="fieldDXABMD">DXA Femoral Neck #1 BMD (g/cm^2): </label>
-            <input name="fieldDXABMD" id="fieldDXABMD" />
-        </div>
-
-        <div>
-            <label for="fieldDXAlumbar">DXA Femoral Neck #1 BMD (g/cm^2): </label>
-            <input name="fieldDXAlumbar" id="fieldDXAlumbar" />
-        </div>
-
-        <div>
-            <label for="fieldDXABMD">DXA L1-L4 BMD (g/cm^2): </label>
-            <input name="fieldDXABMD" id="fieldDXABMD" />
-        </div>
-
-        <div>
-            <label for="fieldFraxMajor">FRAX Score - online calculator major fracture (%): </label>
-            <input name="fieldFraxMajor" id="fieldFraxMajor" />
-        </div>
-
-
-        <div>
-            <label for="fieldFraxHip">FRAX Score - online calculator hip fracture (%): </label>
-            <input name="fieldFraxHip" id="fieldFraxHip" />
-        </div>
-
-        <div></div>
-        <div></div>
-        <div></div>
-
-
-        <input type="submit" value="Submit">
+            </select><br><br>
+        </fieldset>
     </form>
 
+    <!-- Second Form -->
+    <form id="form2" class="form-grid">
+
+        <!-- Second group of inputs: Radiographic Data -->
+        <fieldset>
+            <legend>Radiographic Data</legend>
+            <label for="medialCorticalThickness">Femoral Medial Cortical Thickness at 50 mm (mm):</label>
+            <input type="text" id="medialCorticalThickness" name="fieldMCT"><br><br>
+
+            <label for="lateralCorticalThickness">Femoral Lateral Cortical Thickness at 50 mm (mm):</label>
+            <input type="text" id="lateralCorticalThickness" name="fieldLCT"><br><br>
+
+            <label for="offset">Femoral Horizontal Offset (mm):</label>
+            <input type="text" id="offset" name="fieldOffset"><br><br>
+
+            <label for="femoralNeckAngle">Femoral Neck Angle (Degrees):</label>
+            <input type="text" id="femoralNeckAngle" name="fieldFMA"><br><br>
+
+            <label for="femoralHeadDiameter">Femoral Head Diameter (mm):</label>
+            <input type="text" id="femoralHeadDiameter" name="fieldFMD"><br><br>
+
+            <label for="verticalOffset">Femoral Vertical Offset (mm):</label>
+            <input type="text" id="verticalOffset" name="fieldVO"><br><br>
+
+            <label for="femoralNeckThickness">Femoral Neck Thickness (mm):</label>
+            <input type="text" id="femoralNeckThickness" name="fieldFMT"><br><br>
+        </fieldset>
+
+        <!-- Third group of inputs: DXA Scan Results -->
+        <fieldset>
+            <legend>DXA Scan Results</legend>
+            <label for="fieldDXABMD">DXA Femoral Neck BMD (g/cm^2):</label>
+            <input type="text" id="fieldDXABMD" name="fieldDXABMD"><br><br>
+
+            <label for="fieldDXALumbar">DXA L1-L4 BMD (g/cm^2):</label>
+            <input type="text" id="fieldDXALumbar" name="fieldDXALumbar"><br><br>
+        </fieldset>
+
+        <!-- Fourth group of inputs: FRAX Scores -->
+        <fieldset>
+            <legend>FRAX Scores</legend>
+            <label for="fieldFraxMajor">Probability of Major Fracture Within 10 Years (%):</label>
+            <input type="text" id="fieldFraxMajor" name="fieldFraxMajor"><br><br>
+
+            <label for="fieldFraxHip">Probability of Hip Fracture Within 10 Years (%):</label>
+            <input type="text" id="fieldFraxHip" name="fieldFraxHip"><br><br>
+        </fieldset>
+    </form>
+
+    <!-- Submit Button for Both Forms -->
+    <div class="submit-container">
+        <button id="submitBtn" type="button">Submit</button>
+    </div>
+
+    <!-- Output for Prediction and Confidence -->
+    <div class="output-container">
+        <fieldset>
+            <legend>Prediction Results</legend>
+            <label for="predictionOutput">Prediction:</label>
+            <input type="text" id="predictionOutput" readonly><br><br>
+
+            <label for="confidenceOutput">Confidence:</label>
+            <input type="text" id="confidenceOutput" readonly><br><br>
+        </fieldset>
+    </div>
+
     <script>
-        document.getElementById("form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the form from submitting normally
-            
-            // Get form data
-            var formData = new FormData(this);
+        document.getElementById("submitBtn").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default form submission
 
+            // Get form data from both forms
+            var form1Data = new FormData(document.getElementById("form1"));
+            var form2Data = new FormData(document.getElementById("form2"));
 
-            //validate numbers being inputted correctly.
-            //var ageInput = formData.get("fieldAgeAtFirst");
-            //if (ageInput === "" || isNaN(ageInput)) {
-            //    alert("Please input a valid age as a number.");
-            //    return; // Exit function if input is invalid
-            //}
+            // Combine both form data into a single object
+            var combinedData = new FormData();
 
-            //var durationInput = formData.get("fieldDuration");
-            //if (durationInput === "" || isNaN(durationInput)) {
-            //    alert("Please input a valid duration as a number.");
-            //    return; // Exit function if input is invalid
-            //}
+            // Append form1 data
+            form1Data.forEach((value, key) => {
+                combinedData.append(key, value);
+            });
 
-            // Send form data to FastAPI endpoint
-            fetch('https://affpythonrepo.onrender.com', {
-            //fetch('http://127.0.0.1:8000/submit/', {
+            // Append form2 data
+            form2Data.forEach((value, key) => {
+                combinedData.append(key, value);
+            });
 
+            // Convert form data to JSON object
+            var jsonData = JSON.stringify(Object.fromEntries(combinedData.entries()));
+
+            // Send the combined form data to the FastAPI endpoint
+            fetch('http://127.0.0.1:8000/submit/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(Object.fromEntries(formData.entries()))
+                body: jsonData
             })
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                alert('Prediction Results:\n' + data.message);
+                // Display the prediction and confidence on the webpage
+                document.getElementById("predictionOutput").value = data.Prediction;
+                document.getElementById("confidenceOutput").value = data.Probability;
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -260,4 +231,5 @@
         });
     </script>
 </body>
+
 </html>
