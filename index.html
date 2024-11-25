@@ -210,7 +210,11 @@
             var jsonData = JSON.stringify(Object.fromEntries(combinedData.entries()));
 
             // Send the combined form data to the FastAPI endpoint
-            fetch('http://127.0.0.1:8000/submit/', {
+            //fetch('http://127.0.0.1:8000/submit/', {
+            fetch('https://affpythonrepo.onrender.com', {
+
+
+                
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
