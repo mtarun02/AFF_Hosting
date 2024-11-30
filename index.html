@@ -12,8 +12,8 @@
     <div class="header-bar">
         Machine Learning Atypical Femur Fracture (AFF) Risk Predictor
     </div>
-    <div class="sub-header" style="font-size: 0.9em;">
-        For investigative use only. Not for clinical use
+    <div class="sub-header" style="font-size: 1em;">
+        For investigative use only. Not for clinical use. Numbered features indicate top 15 important feature rankings for prediction.
     </div>
 
     <!-- First Form -->
@@ -22,6 +22,80 @@
         <!-- First group of inputs: Patient History -->
         <fieldset>
             <legend>Patient History</legend>
+
+            <label for="fieldAlendronate">(1) Alendronate Use (Y/N):</label>
+            <select id="fieldAlendronate" name="fieldAlendronate">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
+
+            <label for="fieldDuration">(2) Duration of Bisphosphonate Use (Years):</label>
+            <input type="text" id="fieldDuration" name="fieldDuration"><br><br>
+
+            <label for="fieldSteroid">(3) Steroid Use for 3 or more months (Y/N):</label>
+            <select id="fieldSteroid" name="fieldSteroid">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
+
+            <label for="fieldZoledronate">(4) Zoledronate Use (Y/N):</label>
+            <select id="fieldZoledronate" name="fieldZoledronate">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
+
+            <label for="fieldSO">(8) History of Secondary Osteoporosis (Y/N):</label>
+            <select id="fieldSO" name="fieldSO">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
+
+            <label for="fieldPreviousNTF">(10) Previous Non Traumatic Fracture (Y/N):</label>
+            <select id="fieldPreviousNTF" name="fieldPreviousNTF">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
+
+            <label for="fieldDenosumab">(11) Denosumab Use (Y/N):</label>
+            <select id="fieldDenosumab" name="fieldDenosumab">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
+
+            <label for="fieldRA">(12) Rheumatoid Arthritis (Y/N):</label>
+            <select id="fieldRA" name="fieldRA">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
+
+            <label for="fieldParent">Parent Fractured Hip? (Y/N):</label>
+            <select id="fieldParent" name="fieldParent">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
+
+
+            <label for="fieldSmoker">Current Smoker? (Y/N):</label>
+            <select id="fieldSmoker" name="fieldSmoker">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
+
+            <label for="fieldAlcoholism">Alcohol Use (>3 drinks per day) (Y/N):</label>
+            <select id="fieldAlcoholism" name="fieldAlcoholism">
+                <option></option>
+                <option>Y</option>
+                <option>N</option>
+            </select><br><br>
 
             <label for="fieldPamidronate">Pamidronate Use (Y/N):</label>
             <select id="fieldPamidronate" name="fieldPamidronate">
@@ -44,78 +118,7 @@
                 <option>N</option>
             </select><br><br>
 
-            <label for="fieldZoledronate">Zoledronate Use (Y/N):</label>
-            <select id="fieldZoledronate" name="fieldZoledronate">
-                <option></option>
-                <option>Y</option>
-                <option>N</option>
-            </select><br><br>
 
-            <label for="fieldAlendronate">Alendronate Use (Y/N):</label>
-            <select id="fieldAlendronate" name="fieldAlendronate">
-                <option></option>
-                <option>Y</option>
-                <option>N</option>
-            </select><br><br>
-
-            <label for="fieldDenosumab">Denosumab Use (Y/N):</label>
-            <select id="fieldDenosumab" name="fieldDenosumab">
-                <option></option>
-                <option>Y</option>
-                <option>N</option>
-            </select><br><br>
-
-            <label for="fieldDuration">Duration of Bisphosphonate Use (Years):</label>
-            <input type="text" id="fieldDuration" name="fieldDuration"><br><br>
-
-            <label for="fieldPreviousNTF">Previous Non Traumatic Fracture (Y/N):</label>
-            <select id="fieldPreviousNTF" name="fieldPreviousNTF">
-                <option></option>
-                <option>Y</option>
-                <option>N</option>
-            </select><br><br>
-
-            <label for="fieldParent">Parent Fractured Hip? (Y/N):</label>
-            <select id="fieldParent" name="fieldParent">
-                <option></option>
-                <option>Y</option>
-                <option>N</option>
-            </select><br><br>
-
-            <label for="fieldSmoker">Current Smoker? (Y/N):</label>
-            <select id="fieldSmoker" name="fieldSmoker">
-                <option></option>
-                <option>Y</option>
-                <option>N</option>
-            </select><br><br>
-
-            <label for="fieldSteroid">Steroid Use (>3 months) (Y/N):</label>
-            <select id="fieldSteroid" name="fieldSteroid">
-                <option></option>
-                <option>Y</option>
-                <option>N</option>
-            </select><br><br>
-
-            <label for="fieldRA">Rheumatoid Arthritis (Y/N):</label>
-            <select id="fieldRA" name="fieldRA">
-                <option></option>
-                <option>Y</option>
-                <option>N</option>
-            </select><br><br>
-
-            <label for="fieldSO">History of Secondary Osteoporosis (Y/N):</label>
-            <select id="fieldSO" name="fieldSO">
-                <option></option>
-                <option>Y</option>
-                <option>N</option>
-            </select><br><br>
-
-            <label for="fieldAlcoholism">Alcoholism (>3 drinks per day) (Y/N):</label>
-            <select id="fieldAlcoholism" name="fieldAlcoholism">
-                <option></option>
-                <option>Y</option>
-                <option>N</option>
-            </select><br><br>
         </fieldset>
     </form>
 
@@ -125,42 +128,48 @@
         <!-- Second group of inputs: Radiographic Data -->
         <fieldset>
             <legend>Radiographic Data</legend>
+
+            <label for="femoralNeckAngle">(5) Femoral Neck Angle (Degrees):</label>
+            <input type="text" id="femoralNeckAngle" name="fieldFMA"><br><br>
+
+            <label for="offset">(6) Femoral Horizontal Offset (mm):</label>
+            <input type="text" id="offset" name="fieldOffset"><br><br>
+
+
+            <label for="verticalOffset">(9) Femoral Vertical Offset (mm):</label>
+            <input type="text" id="verticalOffset" name="fieldVO"><br><br>
+
+            <label for="femoralNeckThickness">(12) Femoral Neck Thickness (mm):</label>
+            <input type="text" id="femoralNeckThickness" name="fieldFMT"><br><br>
+
+            <label for="femoralHeadDiameter">(13) Femoral Head Diameter (mm):</label>
+            <input type="text" id="femoralHeadDiameter" name="fieldFMD"><br><br>
+
+            <label for="lateralCorticalThickness">(14) Femoral Lateral Cortical Thickness at 50 mm (mm):</label>
+            <input type="text" id="lateralCorticalThickness" name="fieldLCT"><br><br>
+
             <label for="medialCorticalThickness">Femoral Medial Cortical Thickness at 50 mm (mm):</label>
             <input type="text" id="medialCorticalThickness" name="fieldMCT"><br><br>
 
-            <label for="lateralCorticalThickness">Femoral Lateral Cortical Thickness at 50 mm (mm):</label>
-            <input type="text" id="lateralCorticalThickness" name="fieldLCT"><br><br>
 
-            <label for="offset">Femoral Horizontal Offset (mm):</label>
-            <input type="text" id="offset" name="fieldOffset"><br><br>
 
-            <label for="femoralNeckAngle">Femoral Neck Angle (Degrees):</label>
-            <input type="text" id="femoralNeckAngle" name="fieldFMA"><br><br>
 
-            <label for="femoralHeadDiameter">Femoral Head Diameter (mm):</label>
-            <input type="text" id="femoralHeadDiameter" name="fieldFMD"><br><br>
-
-            <label for="verticalOffset">Femoral Vertical Offset (mm):</label>
-            <input type="text" id="verticalOffset" name="fieldVO"><br><br>
-
-            <label for="femoralNeckThickness">Femoral Neck Thickness (mm):</label>
-            <input type="text" id="femoralNeckThickness" name="fieldFMT"><br><br>
         </fieldset>
 
         <!-- Third group of inputs: DXA Scan Results -->
         <fieldset>
-            <legend>DXA Scan Results</legend>
-            <label for="fieldDXABMD">DXA Femoral Neck BMD (g/cm^2):</label>
+            <legend>DXA Scores</legend>
+            <label for="fieldDXABMD">(7) Femoral Neck BMD T Score:</label>
             <input type="text" id="fieldDXABMD" name="fieldDXABMD"><br><br>
 
-            <label for="fieldDXALumbar">DXA L1-L4 BMD (g/cm^2):</label>
+            <label for="fieldDXALumbar">(11) L1-L4 BMD T score:</label>
             <input type="text" id="fieldDXALumbar" name="fieldDXALumbar"><br><br>
         </fieldset>
 
         <!-- Fourth group of inputs: FRAX Scores -->
         <fieldset>
             <legend>FRAX Scores</legend>
-            <label for="fieldFraxMajor">Probability of Major Fracture Within 10 Years (%):</label>
+            <label for="fieldFraxMajor">(15) Probability of Major Fracture Within 10 Years (%):</label>
             <input type="text" id="fieldFraxMajor" name="fieldFraxMajor"><br><br>
 
             <label for="fieldFraxHip">Probability of Hip Fracture Within 10 Years (%):</label>
@@ -176,12 +185,13 @@
     <!-- Output for Prediction and Confidence -->
     <div class="output-container">
         <fieldset>
-            <legend>Prediction Results</legend>
-            <label for="predictionOutput">Prediction:</label>
+            
+            <legend></legend>
+            <label for="predictionOutput">High AFF Risk?:</label>
             <input type="text" id="predictionOutput" readonly><br><br>
 
-            <label for="confidenceOutput">Confidence:</label>
-            <input type="text" id="confidenceOutput" readonly><br><br>
+            <label for="confidenceOutput">Confidence level for prediction:</label>
+            <input type="text" id="confidenceOutput" readonly><br>
         </fieldset>
     </div>
 
@@ -211,12 +221,9 @@
 
             // Send the combined form data to the FastAPI endpoint
             //fetch('http://127.0.0.1:8000/submit/', {
-            //fetch('https://affpythonrepo.onrender.com', {
-            fetch('https://affpythonrepo.onrender.com', {
 
+            fetch('aff-python-repo.vercel.app/', {
 
-
-                
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -227,8 +234,14 @@
             .then(data => {
                 console.log(data);
                 // Display the prediction and confidence on the webpage
-                document.getElementById("predictionOutput").value = data.Prediction;
-                document.getElementById("confidenceOutput").value = data.Probability;
+                var affPrediction = data.Prediction == 1 ? "Yes" : "No";
+                var probability = (data.Probability * 100).toFixed(0) + "%";
+
+
+                document.getElementById("predictionOutput").value = affPrediction;
+                document.getElementById("confidenceOutput").value = probability;
+                console.log("Prediction result:", data.Prediction);
+
             })
             .catch(error => {
                 console.error('Error:', error);

@@ -9,9 +9,9 @@ body {
     background-color: navy;
     color: white;
     text-align: center;
-    padding: 2% 0;
-    font-size: 2em;
-    height: 7%;
+    padding: 1.4% 0;
+    font-size: 1.7em;
+    height: 5%;
     box-sizing: border-box;
 }
 
@@ -21,11 +21,15 @@ body {
     font-size: 1.5em;
 }
 
+form {
+    font-size: 1em; /* Adjusts the font size for all text in forms */
+}
+
 /* Remove two-column layout and make forms single-column */
 .form-grid {
     display: block; /* No grid layout, single column */
     width: 100%;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 /* Place form2 next to form1, each taking 50% width */
@@ -40,6 +44,9 @@ body {
     margin-right: 2%;
 }
 
+#form1 label, #form1 select, #form1 input[type="text"] {
+    margin-left: 65px; /* Pushes all fields uniformly to the right */
+}
 /* Fieldset styling */
 fieldset {
     padding: 10px;
@@ -47,6 +54,14 @@ fieldset {
     border: 1px solid #ccc;
     margin-bottom: 20px;
 }
+
+#form1 select {
+    width: 60px; /* Adjust the width of the dropdown menus */
+}
+#fieldDuration {
+    width: 55px; /* Match the width of the text input to the dropdown menus */
+}
+
 
 #form1 fieldset {
     height: 544px;
@@ -64,11 +79,10 @@ legend {
 /* Set all labels to be aligned properly, for both forms */
 #form1 label {
     display: inline-block;
-    width: 300px;
+    width: 350px;
     text-align: right;
-    margin-right: 10px;
+    margin-right: 0px;
 }
-
 /*
 #form2 label {
     display: inline-block;
@@ -78,10 +92,10 @@ legend {
 }
 
 */
-
+/*
 #form2 fieldset:nth-child(1) label {
     display: inline-block;
-    width: 305px;
+    width: 410px;
     text-align: right;
     margin-right: 10px;
 }
@@ -90,7 +104,7 @@ legend {
     display: inline-block;
     width: 275px;
     text-align: right;
-    margin-right: 10px;
+    margin-right: 10px;t
 }
 
 #form2 fieldset:nth-child(3) label {
@@ -99,27 +113,56 @@ legend {
     text-align: right;
     margin-right: 10px;
 }
+*/
+
+#form2 label {
+    display: inline-block;
+    width: 410px; /* Set consistent label width for all fieldsets */
+    text-align: right; /* Align label text to the right */
+    margin-right: 10px; /* Add spacing between labels and inputs */
+}
+
+#form2 input[type="text"] {
+    display: inline-block;
+    width: 95px; /* Set consistent input width */
+    margin-left: 0; /* Remove any additional left margin */
+}
+
 
 /* Output container styling */
 .output-container {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     clear: both; /* Ensure it stays below the forms */
 }
+.output-container label {
+    display: inline-block;
+    width: 250px; /* Adjust label width to align properly */
+    text-align: left;
+
+    margin-right: 3px; /* Adds spacing between the label and input */
+    margin-left: 3px; /* Adds spacing between the label and input */
+t}
+.output-container input[type="text"] {
+    display: inline-block;
+    margin-left: 8px; /* Adjusts alignment relative to the label */
+    text-align: center; /* Centers the text horizontally */
+
+}
 
 /* Center submit button */
 .submit-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 /* Button styling */
 #submitBtn {
-    padding: 15px 30px;
+    padding: 10px 30px;
     font-size: 1.2em;
     background-color: blue;
     color: white;
